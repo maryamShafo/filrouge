@@ -1,0 +1,47 @@
+.about-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .about-content {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .about-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  .about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+  
+  .about-video h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #FF7E33;
+  }
+  
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+  }
+  
+  .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  

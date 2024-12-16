@@ -1,0 +1,72 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+    height: 100px;
+  }
+  
+  .navbar-logo .logo {
+    width: 100px;
+    height: 80px;
+  }
+  
+  .navbar-links {
+    list-style: none;
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 0 15px;
+  }
+  
+  .navbar-links li a {
+    text-decoration: none;
+    color: #F4F4F4;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .navbar-links li a:hover {
+    color: #FF7E33;
+  }
+ 
+  .navbar-search input {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+  }
+
+  .navbar-buttons{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .navbar-buttons .btn-login, .navbar-buttons .btn-contact {
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #FF7E33;
+    color: #F4F4F4;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-buttons .btn-login:hover, .navbar-buttons .btn-contact:hover {
+    background-color: #FFD8C2;
+  }
+  
+  .navbar-buttons .btn-login a, .navbar-buttons .btn-contact a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .navbar-buttons .btn-login:hover a, .navbar-buttons .btn-contact:hover a {
+    color: white;
+  }
+  

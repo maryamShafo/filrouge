@@ -1,0 +1,40 @@
+.temoignages-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .temoignages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .temoignage-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  video {
+    border-radius: 8px;
+  }
+  
+  h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #FF7E33;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    font-style: italic;
+  }
+  
