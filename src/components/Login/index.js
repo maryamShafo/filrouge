@@ -1,27 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 import axios from 'axios';
 
-const loginURL = 'http://localhost:8081/public/v1/auth/login';
+const apiUrl = process.env.REACT_APP_API_URL;
+//const loginURL = 'http://localhost:8080/public/v1/auth/login';
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const loginForm = {
+    const LoginForm = {
       username: email,
       password
     };
+
     try {
-      const response = await axios.post(loginURL, loginForm);
+      const response = await axios.post(`${apiUrl}/public/v1/auth/login`, LoginForm);
       localStorage.setItem('user', response.data.token);
       setEmail('');
       setPassword('');
     } catch (error) {
       setEmail('');
     }
+  };
+  const handleNavigateToSubscribe = () => {
+    navigate('/Subscribe');
   };
   return (
     <div className="login-container">
@@ -53,6 +60,11 @@ function Login() {
           Connexion
         </button>
       </form>
+      <button type="button"
+          className="btn-subscribe"
+          onClick={handleNavigateToSubscribe}
+        >
+      </button>
     </div>
   );
 }

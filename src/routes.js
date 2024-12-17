@@ -13,6 +13,7 @@ import Login from './components/Login';
 import Categories from './components/Categories';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Subscribe from './components/Subscribe';
 
 const RoutesConfig = () => (
   <Router>
@@ -24,6 +25,7 @@ const RoutesConfig = () => (
       <Route path="/temoignages" element={<Temoignages />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/subscribe" element={<Subscribe />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="*" element={<Error404 />} />
     </Routes>

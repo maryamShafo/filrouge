@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const webpack = require('webpack');
+const dotenv = require('dotenv').config(); // Load .env file automatically
 
 module.exports = {
   entry: './src/index.js',
@@ -51,7 +53,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     host: 'localhost',
-    port: 9090,
+    port: 9091,
     open: true,
     hot: true,
     client: {
@@ -72,6 +74,9 @@ module.exports = {
       extensions: 'js',
       exclude: 'node_modules',
       files: './src/'
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(dotenv.parsed) // Pass all .env variables
     })
   ]
 };
