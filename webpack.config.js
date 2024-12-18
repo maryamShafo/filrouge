@@ -1,10 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
-const webpack = require('webpack');
-const dotenv = require('dotenv').config(); // Load .env file automatically
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
+  performance: {
+    maxAssetSize: 100000000, // Set a higher limit for assets (in bytes)
+    maxEntrypointSize: 100000000, // Set a higher limit for entry points (in bytes)
+    hints: false // Disable warnings completely
+  },
+  mode: 'production',
   entry: './src/index.js',
   output: {
     filename: 'src/[name].[fullhash].js',
@@ -47,6 +52,13 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.mp4$/,
+        type: 'asset/resource', // Ensures the file is treated as a separate asset
+        generator: {
+          filename: 'assets/videos/[name][ext]' // Specify output directory for videos
+        }
       }
     ]
   },
@@ -75,8 +87,6 @@ module.exports = {
       exclude: 'node_modules',
       files: './src/'
     }),
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.parsed) // Pass all .env variables
-    })
+    new Dotenv()
   ]
 };
